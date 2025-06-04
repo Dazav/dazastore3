@@ -1,6 +1,6 @@
 import {mongooseConnect} from "../lib/mongoose";
 import mongoose, { model, models, Schema } from 'mongoose';
-import { Product } from '@/models/product';
+import { Product } from '@/models/Product';
 import Featured from '../components/featured';
 import Header from '../components/header';
 import NewProducts from '../components/NewProducts';

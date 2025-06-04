@@ -7,16 +7,28 @@ const StyledButton = styled.button`
     color: #fff;
     padding: 5px 15px;
     border-radius: 5px;
+    
     ${props => props.white && !props.outline && css`
-        background-color: %fff;
+        background-color: #fff;
         color: #000;
     `}
+    
      ${props => props.white && props.outline && css`
         background-color: transparent;
-        border: 1px solid;
+        border: 1px solid #fff;
         color: #fff;
     `}
-    ${props => props.primary  && css`
+     ${props => props.black && !props.outline && css`
+        background-color: #000;
+        color: #fff;
+    `}
+    
+     ${props => props.black && props.outline && css`
+        background-color: transparent;
+        border: 1px solid #000;
+        color: #000;
+    `}
+    ${props => props.primary && css`
         background-color:rgb(252, 252, 252);
         color:rgb(0, 0, 0);
     `}
@@ -25,6 +37,10 @@ const StyledButton = styled.button`
        padding: 10px 20px;
        cursor: pointer;
     `}
+    ${props => props.block && css`
+        display: block;
+        width: 100%;
+    }`}
     
 `;
 

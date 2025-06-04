@@ -2,6 +2,11 @@ import styled from 'styled-components';
 import Center from './center';      
 import PrimaryBtn from './Button';
 import Button from './Button';
+import { useContext } from 'react';
+import { set } from 'mongoose';
+import { CartContext } from './CartContext';
+import {addProduct} from './CartContext';
+import { setCartProducts } from './CartContext';
 
 const Bg = styled.div`
     background-color: #222;
@@ -43,6 +48,11 @@ const ButtonsWrapper = styled.div`
 
 
 export default function Featured({product}) {
+    
+    const {addProduct} = useContext(CartContext);
+    const addFeaturedToCart = () => {
+        addProduct(product._id);	
+    }
     return (
         <Bg>
             <Center> 
@@ -54,7 +64,7 @@ export default function Featured({product}) {
                 </Desc>
                 <ButtonsWrapper>
                  <Button outline primary >Read more</Button>
-                 <Button white >Add to cart</Button>
+                 <Button white onClick={addFeaturedToCart}>Add to cart</Button>
                  </ButtonsWrapper>
                 </div>
                
